@@ -1,0 +1,68 @@
+/****************************************
+    Custom Website Dependency Styles
+****************************************/
+
+.menu-wrapper {
+  cursor: pointer;
+  padding: 11px 0;
+  display: inline-block;
+  width: 43px;
+}
+
+.menu-wrapper span, .menu-wrapper span:before, .menu-wrapper span:after {
+  content: '';
+  height: 1px;
+  background-color: #000000;
+  width: 100%;
+  display: block;
+
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+  transition-property: all;
+  transition-timing-function: ease;
+}
+
+.menu-wrapper span {
+  position: relative;
+  background: transparent;
+}
+
+.menu-wrapper span:before {
+  width: 55%;
+  position: absolute;
+  top: 0px;
+  right: 1px;
+  transform: rotate(-45deg);
+}
+
+.menu-wrapper span:after {
+  width: 55%;
+  position: absolute;
+  top: 0px;
+  left: 1px;
+  transform: rotate(45deg);
+}
+
+/* Cross effect */
+.menu-wrapper.active .menu-cross {
+  transition-duration: 0.1s;
+  background: none;
+}
+.menu-wrapper.active .menu-cross:before {
+  width: 100%;
+  transform: rotate(45deg);
+  top: 0px;
+  left: 0;
+}
+.menu-wrapper.active .menu-cross:after {
+  width: 100%;
+  transform: rotate(-45deg);
+  top: 0px;
+  left: 0;
+}
+
+@keyframes toCross {
+  0% {transform: scale(0, 0);}
+  50% {background-color: red;}
+  to {background-color: yellow;}
+}
